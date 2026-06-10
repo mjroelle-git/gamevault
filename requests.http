@@ -1,0 +1,51 @@
+### Health check
+GET http://localhost:3000/
+
+###
+
+### Get all games
+GET http://localhost:3000/games
+
+###
+
+### Get a single game
+GET http://localhost:3000/games/1
+
+###
+
+### Get a game that doesn't exist
+GET http://localhost:3000/games/999
+
+###
+
+### Add a new game
+POST http://localhost:3000/games
+Content-Type: application/json
+
+{
+  "title": "Baldur's Gate 3",
+  "genre": "RPG",
+  "platform": "PC",
+  "releaseYear": 2023,
+  "totalHoursPlayed": 200
+}
+
+###
+
+### Update hours played on game 1
+PATCH http://localhost:3000/games/1
+Content-Type: application/json
+
+{
+  "totalHoursPlayed": 150
+}
+
+###
+
+### Delete game 2
+DELETE http://localhost:3000/games/2
+
+###
+
+### Confirm game 2 is gone
+GET http://localhost:3000/games
